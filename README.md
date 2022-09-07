@@ -107,7 +107,8 @@ GET /likelion/test-employee-dto
 ```
 - Log
 ```
-2022-09-07 15:42:52.839 -ERROR 36737 --- [http-nio-9081-exec-8] com.example.week32.aspect.LoggingAspect :   31 : Get An exception occurred while getting DTO at execution(EmployeeDto com.example.week32.service.impl.EmployeeServiceImpl.getEmployeeDto(EmployeeDto))
+2022-09-07 18:13:28.636 - INFO 7287 --- [http-nio-9081-exec-4] c.e.w.service.impl.EmployeeServiceImpl  :   16 : Input argument: EmployeeDto(employeeId=1, name=Nhan vien 1, birthDate=Sat Jan 01 07:00:00 ICT 2000, gender=male, email=anh.vn00@gmail.com)
+2022-09-07 18:13:28.640 -ERROR 7287 --- [http-nio-9081-exec-4] com.example.week32.aspect.LoggingAspect :   31 : Get An exception occurred while getting DTO at execution(EmployeeDto com.example.week32.service.impl.EmployeeServiceImpl.getEmployeeDto(EmployeeDto))
 ```
 
 ### Case 4: Success - Get Employee with valid @ResponseBody and Service gets Dto successfully 
@@ -136,6 +137,10 @@ GET /likelion/test-employee-dto
   },
   "message": null
 }
+```
+- Log
+```
+2022-09-07 18:15:17.152 - INFO 7287 --- [http-nio-9081-exec-2] c.e.w.service.impl.EmployeeServiceImpl  :   16 : Input argument: EmployeeDto(employeeId=1, name=Nhan vien 1, birthDate=Sat Jan 01 07:00:00 ICT 2000, gender=male, email=anh.vn00@gmail.com)
 ```
 ---
 ## Get Department API
@@ -240,8 +245,9 @@ GET /likelion/test-department-dto
 ```
 - Log
 ```
-2022-09-07 15:57:39.702 - INFO 40009 --- [http-nio-9081-exec-2] com.example.week32.aspect.LoggingAspect :   21 : Before execution(DepartmentDto com.example.week32.service.impl.DepartmentServiceImpl.getDepartmentDto(DepartmentDto))
-2022-09-07 15:57:39.745 - INFO 40009 --- [http-nio-9081-exec-2] com.example.week32.aspect.LoggingAspect :   26 : After execution(DepartmentDto com.example.week32.service.impl.DepartmentServiceImpl.getDepartmentDto(DepartmentDto))
+2022-09-07 18:16:14.589 - INFO 7287 --- [http-nio-9081-exec-3] com.example.week32.aspect.LoggingAspect :   21 : Before execution(DepartmentDto com.example.week32.service.impl.DepartmentServiceImpl.getDepartmentDto(DepartmentDto))
+2022-09-07 18:16:14.611 - INFO 7287 --- [http-nio-9081-exec-3] c.e.w.s.impl.DepartmentServiceImpl      :   17 : Input argument: DepartmentDto(departmentId=1, deptName=Phong 11111111, desciption=Day la phong so 1, employeeDtos=[EmployeeDto(employeeId=1, name=Nhan vien 1, birthDate=Sat Jan 01 07:00:00 ICT 2000, gender=male, email=abc@gmail.com)])
+2022-09-07 18:16:14.611 - INFO 7287 --- [http-nio-9081-exec-3] com.example.week32.aspect.LoggingAspect :   26 : After execution(DepartmentDto com.example.week32.service.impl.DepartmentServiceImpl.getDepartmentDto(DepartmentDto))
 ```
 
 
